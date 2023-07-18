@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  puppeteer:
+    image: ghcr.io/puppeteer/puppeteer:19.8.5
+    user: "1000"
+    working_dir: /app
+    volumes:
+      - ./src:/app
+    cap_add:
+      - SYS_ADMIN
+    command: node
+    tty: true
